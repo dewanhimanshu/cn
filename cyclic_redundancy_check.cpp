@@ -112,23 +112,7 @@ public:
         {
             code[cc++] = temp[i];
         }
-        while(true)
-        {
 
-            if(info[0]=='0')
-            {
-                for(int i=1; i<n; i++)
-                {
-                    info[i-1] = info[i];
-
-                }
-                n--;
-            }
-            else
-            {
-                break;
-            }
-        }
         for(int i=0; i<n; i++)
         {
             code[cc++] = info[i];
