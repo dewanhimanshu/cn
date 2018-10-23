@@ -63,8 +63,8 @@ class rout
 
             for(int i=0;i<table_length;i++)
             {
-                cout<<"\nRouter Number\tDistance\tvia";
-                cout<<i<<"\t"<<distances[i]<<"\t"<<via[i]
+                cout<<"\nRouter Number\tDistance\tvia\n";
+                cout<<i<<"\t"<<distances[i]<<"\t"<<via[i];
 
             }
         }

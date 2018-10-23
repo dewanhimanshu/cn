@@ -31,7 +31,7 @@ void dijstra(int a[100][100],int n)
         visited[minVertex] = true;
         for(int j=0;j<n;j++)
         {
-            if(a[minVertex][j]!=0&&!visited[j] && distance[minVertex]!=INT_MAX)
+            if(a[minVertex][j]!=0 && !visited[j] && distance[minVertex]!=INT_MAX)
             {
                     int dis = distance[minVertex] + a[minVertex][j] ;
                     if( dis < distance[j])
