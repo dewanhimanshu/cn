@@ -99,6 +99,7 @@ public:
 
                     info[j] =((info[j]-'0') ^ (gene[i]-'0'))+'0';
                 }
+                n--;
 
             }
         }
@@ -204,4 +205,101 @@ int main()
     c.generate();
     c.error();
     c.check();
+}
+/*
+#include<iostream>
+#include<math.h>
+#include<time.h>
+#include<stdlib.h>
+#define MAX 100
+using namespace std;
+class crc
+{
+    public:
+    int info[MAX];
+
+    int gene[MAX];
+    int g=0;
+    int n=0;
+
+    void input()
+    {
+        cout<<"\nEnter number of info";
+        cin>>n;
+        cout<<"\nEnter the info";
+        for(int i=0;i<n;i++)
+        {
+            cin>>info[i];
+        }
+        cout<<"\nEnter number of bits in generater";
+        cin>>g;
+        cout<<"\nEnter generater poly";
+        for(int i=0;i<g;i++)
+        {
+            cin>>gene[i];
+        }
+
+        for(int i=n;i<g;i++)
+        {
+            info[i] = 0;
+        }
+        n = n + g -1;
+        cout<<"\nvalue of info after each step";
+        for(int i=0;i<n;i++)
+        {
+            cout<<info[i];
+        }
+
+
+    }
+    int val(int a[] , int l)
+    {
+        int s = 0;
+        for(int i=0;i<l;i++)
+        {
+            if(a[i]==1)
+                s = s + pow(2,l-i-1);
+        }
+        return s;
+    }
+    void make()
+    {
+
+        while(val(info,n)>val(gene,g))
+        {
+
+
+
+            if(info[0]==0)
+            {
+                for(int i=1;i<n;i++)
+                {
+                    info[i-1] = info[i];
+                }
+                n--;
+            }
+            else
+            {
+                for(int i=0;i<g;i++)
+                {
+                    info[i] = ((info[i])^(gene[i]));
+                }
+            }
+        }
+
+        cout<<endl;
+        for(int i=0;i<n;i++)
+        {
+            cout<<info[i];
+        }
+    }
+
+
+
+};
+int main()
+{
+    crc c;
+    c.input();
+    c.make();
 }
